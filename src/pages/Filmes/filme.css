@@ -33,3 +33,8 @@ span{
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
 }
+
+.trailer:hover{
+    background-color: brown;
+    cursor: pointer;
+}

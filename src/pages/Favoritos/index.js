@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
-import api from '../../services/api';
+import { toast } from 'react-toastify'
+import './favoritos.css'
 
 export default function Filme(){
 
@@ -25,6 +26,8 @@ export default function Filme(){
                 
             }
         })
+
+        toast.success('Filme excluido :)')
     }
     if(loading){
         
@@ -36,13 +39,19 @@ export default function Filme(){
         return(
             <div className="container">
                 <h1>Página de favoritos</h1>
+                {filmes.length === 0 && <h1>Você não tem filmes salvos. :(</h1>}
+                
                 <div>{filmes.map((filme)=>{
 
                     return(
                         <article className="filmes" key={filme.id}>
                             <h2>{filme.nome}</h2>
-                            <button type="button" onClick={()=> excluir(filme.id)}>Excluir</button>
+
+                            <div className="container-buttons">
+
+                            <button type="button" className="excluir" onClick={()=> excluir(filme.id)}>Excluir</button>
                             <Link to={`/filme/${filme.id}`}>Informações</Link>
+                            </div>
                         </article>
                     )
                 })}</div>

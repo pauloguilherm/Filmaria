@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify'
 import './filme.css';
 import api from '../../services/api';
 
@@ -17,7 +18,7 @@ export default function Filme(){
             const response = await api.get(`r-api/?api=filmes/${id}`)
             
             if(response.data.length === 0){
-                alert('Filme não encontrado')
+                toast.error('Filme não encontrado')
                 history('/')
                 return;
             }
@@ -42,14 +43,14 @@ export default function Filme(){
         const hasFilme = minhaLista.some((filmeSalvo) =>  filmeSalvo.id === filmes.id)
         
         if(hasFilme){
-            alert('[ERROR] Filme já salvo') 
+            toast.error('Filme já salvo') 
             return
         } 
 
         minhaLista.push(filmes)
 
         localStorage.setItem('filmes', JSON.stringify(minhaLista))
-        alert('Filme salvo com sucesso')
+        toast.success('Filme salvo com sucesso')
 
     
     }
@@ -66,7 +67,7 @@ export default function Filme(){
                 <h1>{filmes.nome}</h1>
                 <img src={filmes.foto} alt={filmes.nome}/>
                 <span>{filmes.sinopse}</span>
-                <a className="trailer" target="blank" href={`https://www.youtube.com/results?search_query=${filmes.nome} trailer`}>trailer</a>
+                <a className="trailer" target="blank" href={`https://www.youtube.com/results?search_query=${filmes.nome} trailer`}>Trailer</a>
                 <a className="trailer" onClick={ salvaFilme } >Salvar</a>
             </div>
         )

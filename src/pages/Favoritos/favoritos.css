@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.filmes{
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    align-items: center;
+    width: 600px;
+}
+
+.excluir{
+    background-color: rgb(238, 26, 26);
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.excluir:hover{
+    background-color: rgb(219, 51, 51);
+    cursor: pointer;
+}
