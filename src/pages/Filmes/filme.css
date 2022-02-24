@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    font-size: 35px;
+}
+
+img{
+    width: 900px;
+    max-height: 350px;
+}
+
+span{
+    padding-top: 40px;
+    width: 900px;
+}
+
+.trailer{
+    position: relative;
+    right: 410px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(61, 56, 56);
+    font-size: 18px;
+    width: 8%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
