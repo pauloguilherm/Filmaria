@@ -1,4 +1,4 @@
-.container{
+.container-filmes{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,30 +11,49 @@ h1{
 
 img{
     width: 900px;
-    max-height: 350px;
 }
 
 span{
-    padding-top: 40px;
     width: 900px;
 }
 
 .trailer{
-    position: relative;
-    right: 410px;
     text-decoration: none;
     color: #fff;
     background-color: rgb(61, 56, 56);
     font-size: 18px;
-    width: 8%;
     text-align: center;
     padding: 10px;
-    margin-top: 20px;
-    border-bottom-left-radius: 9px;
-    border-bottom-right-radius: 9px;
+    margin-right: 40px;
+    border-radius: 10px;
 }
 
 .trailer:hover{
     background-color: brown;
     cursor: pointer;
+}
+
+.container-buttons{
+    width: 100%;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 700px){
+    img{
+        width: 300px;
+    }
+
+    span{
+        width: 300px;
+        font-size: 12px;
+    }
+
+    .trailer{
+        font-size: 10px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
 }

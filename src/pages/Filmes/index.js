@@ -63,12 +63,19 @@ export default function Filme(){
 
     }else{
         return(
-            <div className="container">
+            <div className="container-filmes">
                 <h1>{filmes.nome}</h1>
                 <img src={filmes.foto} alt={filmes.nome}/>
-                <span>{filmes.sinopse}</span>
+                <span>
+                    <h4>Sinopse:</h4>
+                    {filmes.sinopse}
+                </span>
+
+                <div className="container-buttons">
+
                 <a className="trailer" target="blank" href={`https://www.youtube.com/results?search_query=${filmes.nome} trailer`}>Trailer</a>
                 <a className="trailer" onClick={ salvaFilme } >Salvar</a>
+                </div>
             </div>
         )
     }

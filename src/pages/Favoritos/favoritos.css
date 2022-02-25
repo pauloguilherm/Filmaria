@@ -1,4 +1,4 @@
-.container{
+.container-filmeID{
     display: flex;
     flex-direction: column;
 }
@@ -17,10 +17,29 @@
     width: 100px;
     height: 30px;
     border-radius: 10px;
-    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .excluir:hover{
     background-color: rgb(219, 51, 51);
     cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .filmes{
+        width: 300px;
+    }
+    
+    .filmes h2{
+        font-size: 14px;    
+    }
+
+    .filmes a{
+        font-size: 10px;
+    }
+
+    .excluir{
+        width: 60px;
+        height: 24px;
+    }
 }

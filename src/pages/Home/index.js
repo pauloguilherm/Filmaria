@@ -17,7 +17,7 @@ export default function Home(){
         loadFilmes();
     }, [])
     return(
-        <div className="container">
+        <div className="container-home">
             <div className="lista-filmes">
 
                {filmes.map((filme)=>{

@@ -37,7 +37,7 @@ export default function Filme(){
 
     }else{
         return(
-            <div className="container">
+            <div className="container-filmeID">
                 <h1>Página de favoritos</h1>
                 {filmes.length === 0 && <h1>Você não tem filmes salvos. :(</h1>}
                 
@@ -47,10 +47,10 @@ export default function Filme(){
                         <article className="filmes" key={filme.id}>
                             <h2>{filme.nome}</h2>
 
-                            <div className="container-buttons">
+                            <div>
 
-                            <button type="button" className="excluir" onClick={()=> excluir(filme.id)}>Excluir</button>
                             <Link to={`/filme/${filme.id}`}>Informações</Link>
+                            <button type="button" className="excluir" onClick={()=> excluir(filme.id)}>Excluir</button>
                             </div>
                         </article>
                     )
